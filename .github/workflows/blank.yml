@@ -32,5 +32,5 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Create ZIP deployment package
-        run : zip -r ${{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.gi
+        run : zip -r ${{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.git*
 
