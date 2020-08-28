@@ -13,7 +13,7 @@ env:
 on:
   push:
     branches: 
-      - master
+    - master
 #  pull_request:
 #    branches: [ master ]
 
@@ -34,3 +34,4 @@ jobs:
       - name: Create ZIP deployment package
         run : zip -r ${{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.git*
 
+    
