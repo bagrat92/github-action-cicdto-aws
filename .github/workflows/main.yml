@@ -33,5 +33,11 @@ jobs:
       # Runs a single command using the runners shell
       - name: Create ZIP deployment package
         run : zip -r ${{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.git*
+        
+  my_deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Print Hello World
+          run : echo "Hello World!!! from my Deploy" 
 
     
