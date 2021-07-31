@@ -2,10 +2,10 @@
 
 name: CI-CD-Pipeline-to AWS-ElsticBeanStalk
 env:
-  EB_PACKEGE_S3_BUCKET_NAME: "my-new-flask-application-packege"
+  EB_PACKAGE_S3_BUCKET_NAME: "my-new-flask-application-package"
   EB_APPLICATION_NAME      : "MyFlask"
   EB_ENVIRONMENT_NAME      : "MyFlask-env"
-  DEPLOY_PACKEGE_NAEM      : "flask_app_${{ github.sha }}.zip"
+  DEPLOY_PACKAGE_NAEM      : "flask_app_${{ github.sha }}.zip"
   AWS_REGION_NAME          :  "eu-central-1"
 on:
   push:
@@ -20,8 +20,8 @@ jobs:
     - name: Git clone our repo
       uses: actions/checkout@v1
 
-    - name: Create clone our repo
-      run:  zip -r ${{ env.DEPLOY_PACKEGE_NAME }} ./ -x *.git*
+    - name: Create ZIP deployment package
+      run:  zip -r ${{ env.DEPLOY_PACKAGE_NAME }}  ./ -x *.git*
 
     - name: Configure my AWS credential
       uses: aws-actions/configure-aws-credentials@v1
