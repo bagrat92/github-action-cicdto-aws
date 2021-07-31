@@ -26,8 +26,8 @@ jobs:
     - name: Configure my AWS credential
       uses: aws-actions/configure-aws-credentials@v1
       with:
-         aws-access-key-id     :  ${{ secrets.GITHUB_TOKEN }}
-         aws-secret-access-key :  ${{ secrets.GITHUB_TOKEN }}
+         aws-access-key-id     :  ${{ secrets.aws-credentials }}
+         aws-secret-access-key :  ${{ secrets.aws-credentials }}
          aws-region            :  ${{ env.AWS_REGION_NAME }}
          
     - name: Copy Deploymant packege to S3 bucket
